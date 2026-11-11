@@ -1,0 +1,38 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27%3E%3Crect width=%2716%27 height=%2716%27 rx=%272%27 fill=%27%232F5D50%27/%3E%3C/svg%3E"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="/styles.css"><title>Reserve: sign in and connect Claude</title></head>
+<body><header id="top"></header>
+<main class="wrap">
+  <h1>Book a table, or ask Claude to.</h1>
+  <p class="lead">Sign in, then connect your own Claude. It can search restaurants, find a free table and book it for you. You can also pick a table yourself.</p>
+
+  <section id="signin" class="panel stack" style="max-width:460px">
+    <h2>Sign in</h2>
+    <form id="signinForm" class="stack" novalidate>
+      <div><label for="name">Name</label><input id="name" autocomplete="name" required maxlength="60"></div>
+      <div><label for="email">Email</label><input id="email" type="email" autocomplete="email" required maxlength="120"></div>
+      <div class="msg" id="signinMsg" role="alert"></div>
+      <button class="btn" type="submit">Sign in</button>
+    </form>
+  </section>
+
+  <section id="connect" class="panel stack hidden">
+    <div>
+      <h2>Connect your Claude</h2>
+      <p class="muted" style="margin:0">Add this link as a custom connector in Claude. It is personal to you, so keep it private.</p>
+    </div>
+    <div class="copy">
+      <input id="mcpUrl" readonly aria-label="Your Claude connector link">
+      <button class="btn ghost" id="copyBtn" type="button">Copy link</button>
+    </div>
+    <ol class="steps">
+      <li>In Claude, open Settings, then Connectors.</li>
+      <li>Choose Add custom connector, name it Reserve, and paste the link above.</li>
+      <li>Start a chat and ask: "Find a table for 4 at a South Indian restaurant tomorrow at 8 pm."</li>
+    </ol>
+    <div class="actions">
+      <a class="btn" href="/book">Continue to booking</a>
+      <button class="link" id="notYou" type="button">Not you? Sign out</button>
+    </div>
+  </section>
+  <p class="foot">Reserve has no AI inside. Your Claude does the thinking; this app saves the bookings and keeps the tables live.</p>
+</main>
+<script src="/app.js"></script><script src="/index.js"></script></body></html>

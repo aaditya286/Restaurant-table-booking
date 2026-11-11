@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: reserve
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /healthz
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: MANAGER_PASSCODE
+        value: manager123
+      - key: SESSION_SECRET
+        generateValue: true

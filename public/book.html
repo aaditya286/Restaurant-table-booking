@@ -1,0 +1,28 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27%3E%3Crect width=%2716%27 height=%2716%27 rx=%272%27 fill=%27%232F5D50%27/%3E%3C/svg%3E"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="/styles.css"><title>Reserve: find a table</title></head>
+<body><header id="top"></header>
+<main class="wrap">
+  <h1>Find a table</h1>
+  <p class="lead" style="margin-bottom:22px">Choose when you are going, pick a restaurant, then tap a free table. Tables are held for 90 minutes.</p>
+  <div class="row three">
+    <div><label for="date">Date</label><input id="date" type="date"></div>
+    <div><label for="time">Time</label><select id="time"></select></div>
+    <div><label for="party">Guests</label><select id="party"></select></div>
+  </div>
+  <div class="layout">
+    <div><div class="rests" id="rests" role="group" aria-label="Restaurants"></div></div>
+    <div>
+      <div class="muted small" id="where" style="margin-bottom:10px"></div>
+      <div class="floor" id="floor" aria-live="polite"></div>
+      <ul class="legend">
+        <li><i></i>Vacant</li><li><i class="s"></i>Selected</li><li><i class="b"></i>Booked</li>
+        <li><i class="u"></i>Unavailable</li><li><i class="x"></i>Too small</li>
+      </ul>
+      <div class="summary">
+        <p id="pick" class="muted">Choose a vacant table on the plan.</p>
+        <button class="btn" id="bookBtn" disabled>Book table</button>
+      </div>
+      <div class="msg" id="msg" role="alert"></div>
+    </div>
+  </div>
+</main>
+<script src="/app.js"></script><script src="/book.js"></script></body></html>

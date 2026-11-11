@@ -1,0 +1,44 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27%3E%3Crect width=%2716%27 height=%2716%27 rx=%272%27 fill=%27%232F5D50%27/%3E%3C/svg%3E"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="/styles.css"><title>Reserve: manager</title></head>
+<body><header id="top"></header>
+<main class="wrap">
+  <h1>Manager</h1>
+  <section id="gate" class="panel stack" style="max-width:420px">
+    <p class="muted" style="margin:0">Enter the manager passcode to update tables.</p>
+    <form id="gateForm" class="stack" novalidate>
+      <div><label for="pass">Passcode</label><input id="pass" type="password" autocomplete="current-password"></div>
+      <div class="msg" id="gateMsg" role="alert"></div>
+      <button class="btn" type="submit">Open manager</button>
+    </form>
+  </section>
+
+  <section id="panel" class="hidden">
+    <div class="row three">
+      <div><label for="mrest">Restaurant</label><select id="mrest"></select></div>
+      <div><label for="mdate">Date</label><input id="mdate" type="date"></div>
+      <div><label for="mtime">Time</label><select id="mtime"></select></div>
+    </div>
+    <div class="mgr">
+      <div>
+        <div class="floor" id="mfloor"></div>
+        <ul class="legend">
+          <li><i></i>Vacant</li><li><i class="s"></i>Selected</li><li><i class="b"></i>Booked</li><li><i class="u"></i>Blocked</li>
+        </ul>
+        <div class="msg" id="mmsg" role="alert"></div>
+      </div>
+      <div class="stack">
+        <div class="panel stack" id="edit"><p class="muted small" style="margin:0">Select a table on the plan to edit it.</p></div>
+        <form class="panel stack" id="addForm" novalidate>
+          <h2>Add a table</h2>
+          <div><label for="addLabel">Name</label><input id="addLabel" maxlength="12" placeholder="Optional, e.g. T9"></div>
+          <div><label for="addSeats">Seats</label><select id="addSeats"></select></div>
+          <button class="btn ghost" type="submit">Add table</button>
+        </form>
+      </div>
+    </div>
+    <h2 style="margin-top:44px">Today's bookings</h2>
+    <p class="muted small" id="todayNote"></p>
+    <div class="tablewrap" id="today"></div>
+    <p class="foot"><button class="link" id="mgrOut" type="button">Close manager</button></p>
+  </section>
+</main>
+<script src="/app.js"></script><script src="/manager.js"></script></body></html>
